@@ -3,17 +3,29 @@
 <head>
 <meta charset="utf-8" />
 <title>kalkulator kredytowy</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 </head>
-<body>
+<bod
+    
+<div style="width:90%; margin: 2em auto;">
+	<a href="<?php print(_APP_ROOT); ?>/app/inna_chroniona.php" class="pure-button">kolejna chroniona strona</a>
+	<a href="<?php print(_APP_ROOT); ?>/app/security/logout.php" class="pure-button pure-button-active">wyloguj</a>
+</div>
 
-<form action="<?php print(_APP_URL);?>/app/kalkredyt.php" method="get">
-	<label for="id_x">kwota: </label>
-	<input id="id_x" type="text" name="x" value="<?php if (isset($x)) print($x); ?>" /><br />
-	<label for="id_y">lata: </label>
-	<input id="id_y" type="text" name="y" value="<?php if (isset($y)) print($y); ?>" /><br />
-	<label for="id_z">oprocentowanie: </label>
-	<input id="id_z" type="text" name="z" value="<?php if (isset($z)) print($z); ?>" /><br />
-	<input type="submit" value="oblicz" />
+<div style="width:90%; margin: 2em auto;">
+    
+    
+<form action="<?php print(_APP_ROOT); ?>/app/kalkredyt.php" method="post" class="pure-form pure-form-stacked">
+	<legend>kalkulator kredytowy</legend>
+	<fieldset>
+		<label for="id_x">kwota: </label>
+		<input id="id_x" type="text" name="x" value="<?php out($x) ?>" />
+		<label for="id_y">lata: </label>
+		<input id="id_y" type="text" name="y" value="<?php out($y) ?>" />
+		<label for="id_z">oprocentowanie: </label>
+		<input id="id_z" type="text" name="z" value="<?php out($z) ?>" />
+	</fieldset>	
+	<input type="submit" value="oblicz" class="pure-button pure-button-primary" />
 </form>	
 
 <?php
