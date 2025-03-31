@@ -1,0 +1,121 @@
+<?php
+/* Smarty version 5.4.2, created on 2025-03-31 13:28:59
+  from 'file:C:\xampp\htdocs\zadanie_5/app/kalk/kalkredyt.html' */
+
+/* @var \Smarty\Template $_smarty_tpl */
+if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
+  'version' => '5.4.2',
+  'unifunc' => 'content_67ea7c7b56e207_84827982',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '2b4c67594cde0aeb71be2e78712fb049e83a7787' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\zadanie_5/app/kalk/kalkredyt.html',
+      1 => 1743420522,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+))) {
+function content_67ea7c7b56e207_84827982 (\Smarty\Template $_smarty_tpl) {
+$_smarty_current_dir = 'C:\\xampp\\htdocs\\zadanie_5\\app\\kalk';
+$_smarty_tpl->getInheritance()->init($_smarty_tpl, true);
+?>
+
+
+<?php 
+$_smarty_tpl->getInheritance()->instanceBlock($_smarty_tpl, 'Block_27821167467ea7c7b561f71_65019745', 'footer');
+?>
+
+
+<?php 
+$_smarty_tpl->getInheritance()->instanceBlock($_smarty_tpl, 'Block_89911836767ea7c7b564814_69414348', 'content');
+?>
+
+	
+<?php $_smarty_tpl->getInheritance()->endChild($_smarty_tpl, ($_smarty_tpl->getValue('conf')->root_path).("/templates/main.html"), $_smarty_current_dir);
+}
+/* {block 'footer'} */
+class Block_27821167467ea7c7b561f71_65019745 extends \Smarty\Runtime\Block
+{
+public function callBlock(\Smarty\Template $_smarty_tpl) {
+$_smarty_current_dir = 'C:\\xampp\\htdocs\\zadanie_5\\app\\kalk';
+?>
+&copy; Untitled. All rights reserved. Design: <a href="http://html5up.net">HTML5 UP</a><?php
+}
+}
+/* {/block 'footer'} */
+/* {block 'content'} */
+class Block_89911836767ea7c7b564814_69414348 extends \Smarty\Runtime\Block
+{
+public function callBlock(\Smarty\Template $_smarty_tpl) {
+$_smarty_current_dir = 'C:\\xampp\\htdocs\\zadanie_5\\app\\kalk';
+?>
+
+
+
+					<h2>Kalkulator kredytowy</h2>
+					<p>Oblicz miesięczną ratę.</p>
+
+					<form action="<?php echo $_smarty_tpl->getValue('conf')->action_root;?>
+calcCompute" method="post">
+                                            <fieldset>
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-8 col-12-mobilep">
+								<input type="text" name="x" id="id_x" placeholder="kwota" value="<?php echo $_smarty_tpl->getValue('form')->x;?>
+" />
+                                                                <br>
+                                                                <input type="text" name="y" id="id_y" placeholder="lata" value="<?php echo $_smarty_tpl->getValue('form')->y;?>
+" />
+                                                                <br>
+                                                                <input type="text" name="z" id="id_z" placeholder="oprocentowanie" value="<?php echo $_smarty_tpl->getValue('form')->z;?>
+" />
+							</div>
+							<div class="col-4 col-12-mobilep">
+                                                            <br><br><br>
+                                                            <button type="submit" class="button">oblicz</button>
+							</div>
+						</div>
+                                            </fieldset>
+					</form>
+                                        <br>
+
+				
+
+                                
+<div id="result">   
+<?php if (($_smarty_tpl->getValue('messages')->isError())) {?>
+    <h4>wystąpiły błędy:</h4>
+    
+    <?php
+$_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('messages')->getErrors(), 'msg');
+$foreach0DoElse = true;
+foreach ($_from ?? [] as $_smarty_tpl->getVariable('msg')->value) {
+$foreach0DoElse = false;
+?>
+                 <li><?php echo $_smarty_tpl->getValue('msg');?>
+</li>
+		<?php
+}
+$_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
+                
+<?php }?> 
+
+
+<?php if ((null !== ($_smarty_tpl->getValue('rata') ?? null))) {?>
+                                                                                               
+<h4>miesięczna rata wynosi: <?php echo $_smarty_tpl->getValue('rata');?>
+ </h4>
+										
+<?php }?>
+
+ </div>                                
+                           
+<?php
+}
+}
+/* {/block 'content'} */
+}
