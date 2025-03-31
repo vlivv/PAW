@@ -79,10 +79,13 @@ class KalkCtrl {
     $this->form->y = intval($this->form->y);
     $this->form->z = floatval($this->form->z);
     
-    if ($this->form->z / 1200 > 0) {
-        $this->rata->rata = $this->form->x * ($this->form->z / 1200 * pow(1 + $this->form->z / 1200, $this->form->y * 12)) / (pow(1 + $this->form->z / 1200, $this->form->y * 12) - 1);
+    $miesiace = $this->form->y * 12;
+    $miesieczneOprocentowanie = $this->form->z / 1200;
+    
+    if ($miesieczneOprocentowanie > 0) {
+        $this->rata->rata = $this->form->x * ($miesieczneOprocentowanie * pow(1 + $miesieczneOprocentowanie, $miesiace)) / (pow(1 + $miesieczneOprocentowanie, $miesiace) - 1);
     } else {
-        $this->rata->rata= $this->form->x / $this->form->y * 12;
+        $this->rata->rata = $this->form->x / $miesiace;
     }
     
     $this->rata->rata = number_format($this->rata->rata, 2, ',', ' ');
