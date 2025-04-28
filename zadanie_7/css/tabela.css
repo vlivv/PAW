@@ -1,0 +1,13 @@
+table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    background-color: #163132 !important;
+}
+
+table th, table td {
+    color: white !important;
+    background-color: #163132 !important;
+    border: 1px solid #ccc !important;
+    text-align: center !important;
+    padding: 10px !important;
+}
